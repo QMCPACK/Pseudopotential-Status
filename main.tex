@@ -1,0 +1,144 @@
+% Created by Bonita Graham
+% Last update: February 2019 By Kestutis Bendinskas
+
+% Authors: 
+% Please do not make changes to the preamble until after the solid line of %s.
+
+\documentclass[10pt]{article}
+\usepackage[explicit]{titlesec}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\usepackage{hyphenat}
+\usepackage{ragged2e}
+\RaggedRight
+
+% These commands change the font. If you do not have Garamond on your computer, you will need to install it.
+\usepackage{garamondx}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm}
+\usepackage{graphicx}
+
+% This adjusts the underline to be in keeping with word processors.
+\usepackage{soul}
+\setul{.6pt}{.4pt}
+
+
+% The following sets margins to 1 in. on top and bottom and .75 in on left and right, and remove page numbers.
+\usepackage{geometry}
+\geometry{vmargin={1in,1in}, hmargin={.75in, .75in}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\pagenumbering{gobble}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+
+% These Commands create the label style for tables, figures and equations.
+\usepackage[labelfont={footnotesize,bf} , textfont=footnotesize]{caption}
+\captionsetup{labelformat=simple, labelsep=period}
+\newcommand\num{\addtocounter{equation}{1}\tag{\theequation}}
+\renewcommand{\theequation}{\arabic{equation}}
+\makeatletter
+\renewcommand\tagform@[1]{\maketag@@@ {\ignorespaces {\footnotesize{\textbf{Equation}}} #1.\unskip \@@italiccorr }}
+\makeatother
+\setlength{\intextsep}{10pt}
+\setlength{\abovecaptionskip}{2pt}
+\setlength{\belowcaptionskip}{-10pt}
+
+\renewcommand{\textfraction}{0.10}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\floatpagefraction}{0.90}
+
+% These commands set the paragraph and line spacing
+\titleformat{\section}
+  {\normalfont}{\thesection}{1em}{\MakeUppercase{\textbf{#1}}}
+\titlespacing\section{0pt}{0pt}{-10pt}
+\titleformat{\subsection}
+  {\normalfont}{\thesubsection}{1em}{\textit{#1}}
+\titlespacing\subsection{0pt}{0pt}{-8pt}
+\renewcommand{\baselinestretch}{1.15}
+
+% This designs the title display style for the maketitle command
+\makeatletter
+\newcommand\sixteen{\@setfontsize\sixteen{16pt}{6}}
+\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+\begin{flushleft}
+\vspace{-.375in}
+\sixteen\bfseries \@title
+\medskip
+\end{flushleft}
+\textit{\@author}
+\egroup}
+\makeatother
+
+% This styles the bibliography and citations.
+%\usepackage[biblabel]{cite}
+\usepackage[sort&compress]{natbib}
+\setlength\bibindent{2em}
+\makeatletter
+\renewcommand\@biblabel[1]{\textbf{#1.}\hfill}
+\makeatother
+\renewcommand{\citenumfont}[1]{\textbf{#1}}
+\bibpunct{}{}{,~}{s}{,}{,}
+\setlength{\bibsep}{0pt plus 0.3ex}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Authors: Add additional packages and new commands here.  
+% Limit your use of new commands and special formatting.
+
+% Place your title below. Use Title Capitalization.
+\title{Pseudopotential (ECP) Development, Roadmap and Requests}
+
+% Add author information below. Communicating author is indicated by an asterisk, the affiliation is shown by superscripted lower case letter if several affiliations need to be noted.
+%\author{
+%Jane Smith*$^{a}$, John Smith$^{b}$ \\ \medskip \bigskip
+%$^{a}$Department of AA, BB University, City, ST (italicized, state is listed as a two-capital letter designation) \\ 
+%$^{b}$Department of CC, DD University, City, ST (italicized, state is listed as a two-capital letter designation)\\ %\medskip \bigskip
+%https://doi.org/10.33697/ajur.2019.003\\ \medskip \bigskip
+ \\
+}
+
+\pagestyle{empty}
+\begin{document}
+
+% Makes the title and author information appear.
+\vspace*{.01 in}
+\maketitle
+\vspace{.12 in}
+
+% Abstracts are required.
+\section*{abstract}
+This document is intended to collect the current activities of the pseudopotential (ECP) development effort within the CMS, to collect ideas about what has been done, what is being worked on, pain points and requests for new potentials
+
+% Keywords are required.
+%\section*{keywords} 
+%List Eight to Ten Capitalized Keywords Separated by \ul{Semicolons}; Do Not Use Period at The End
+
+\vspace{.12 in}
+
+% Start the main part of the manuscript here.
+% Comment out section headings if inappropriate to your discipline.
+% If you add additional section or subsection headings, use an asterisk * to avoid numbering. 
+
+\section*{Current Status}
+Current ECPs covering developed by NCSU cover the first three rows of the periodic table.  Papers concerning their construction are found \cite{first-ecps, second-ecps, third-row, update} in the literature.  They were constructed to have good transferrability and to be as iso-spectral as possible with all electron correlated calculations.  They are available at www.pseudopotentiallibrary.org.  They also include gaussian style basis sets for use in quantum chemistry style calculations.
+
+There are a number of outstanding issues to address 
+\begin{itemize}
+    \item Projectors are available for most ECPs for use in Kleinman-Bylander plane wave DFT codes.  These may currently be hard and their transferrability is not guaranteed.
+    \item The format for including spin-orbit terms as been defined, but currently there are no ECPs available that use this.
+    \item Transferrability data is not readily available outside of papers for the ECPs, furthermore it is difficult to assess trade-offs when trying to look for something like a potential with a lower cutoff or smaller / more amenable basis set.
+\end{itemize}
+
+\section*{current work}
+So and so is doing element x
+
+\section*{requests}
+such and such is hard.
+Please make element x for reason y
+
+\end{document}
