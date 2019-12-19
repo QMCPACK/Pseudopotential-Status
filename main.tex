@@ -13,10 +13,11 @@
 \RaggedRight
 
 % These commands change the font. If you do not have Garamond on your computer, you will need to install it.
-\usepackage{garamondx}
+%\usepackage{garamondx}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath, amsthm}
 \usepackage{graphicx}
+\usepackage{placeins}
 
 % This adjusts the underline to be in keeping with word processors.
 \usepackage{soul}
@@ -33,7 +34,9 @@
 \renewcommand{\footrulewidth}{0.0pt}
 
 % These Commands create the label style for tables, figures and equations.
-\usepackage[labelfont={footnotesize,bf} , textfont=footnotesize]{caption}
+%\usepackage[labelfont={footnotesize,bf} , textfont=footnotesize]{caption}
+\usepackage{caption}
+\usepackage{subcaption}
 \captionsetup{labelformat=simple, labelsep=period}
 \newcommand\num{\addtocounter{equation}{1}\tag{\theequation}}
 \renewcommand{\theequation}{\arabic{equation}}
@@ -41,8 +44,8 @@
 \renewcommand\tagform@[1]{\maketag@@@ {\ignorespaces {\footnotesize{\textbf{Equation}}} #1.\unskip \@@italiccorr }}
 \makeatother
 \setlength{\intextsep}{10pt}
-\setlength{\abovecaptionskip}{2pt}
-\setlength{\belowcaptionskip}{-10pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
 
 \renewcommand{\textfraction}{0.10}
 \renewcommand{\topfraction}{0.85}
@@ -99,8 +102,8 @@
 %$^{a}$Department of AA, BB University, City, ST (italicized, state is listed as a two-capital letter designation) \\ 
 %$^{b}$Department of CC, DD University, City, ST (italicized, state is listed as a two-capital letter designation)\\ %\medskip \bigskip
 %https://doi.org/10.33697/ajur.2019.003\\ \medskip \bigskip
- \\
-}
+
+
 
 \pagestyle{empty}
 \begin{document}
@@ -134,11 +137,20 @@ There are a number of outstanding issues to address
     \item Transferrability data is not readily available outside of papers for the ECPs, furthermore it is difficult to assess trade-offs when trying to look for something like a potential with a lower cutoff or smaller / more amenable basis set.
 \end{itemize}
 
-\section*{current work}
-So and so is doing element x
 
 \section*{requests}
 such and such is hard.
 Please make element x for reason y
+
+
+
+\section*{current work}
+So and so is doing element x
+
+
+\include{Fe}
+
+
+\include{Co}
 
 \end{document}
